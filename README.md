@@ -2,7 +2,7 @@
 
 Kitap kiralama önyüzü (React + Vite + Tailwind) ve Netlify Functions üzerinde çalışan Express API.
 
-Netlify klasik Node sunucusu çalıştırmaz. Statik `dist/` yayına alınır; `/api/v1` istekleri `netlify/functions/api.js` içindeki `serverless-http` sarmalına yönlenir.
+Netlify klasik Node sunucusu çalıştırmaz. Statik `dist/` yayına alınır; `/api/v1` istekleri `netlify/functions/server.js` içindeki `serverless-http` sarmalına yönlenir.
 
 Bellek içi veri demo içindir: Function soğuk açılışında kitaplar seed’e döner. JWT yalnızca imza ile doğrulanır; logout istemcide token siler.
 
@@ -24,7 +24,7 @@ Demo giriş: `admin` / `admin123`
 
 ```text
 api/                     Express (listen yok; local.js sadece geliştirme)
-netlify/functions/api.js serverless-http sarmalı
+netlify/functions/server.js serverless-http sarmalı
 src/app/                 router
 src/components/          layout
 src/features/auth|books|rentals

@@ -4,7 +4,7 @@ const app = require('../../api/app');
 const handle = serverless(app);
 
 exports.handler = async (event, context) => {
-  const prefix = '/.netlify/functions/api';
+  const prefix = '/.netlify/functions/server';
   if (event.path && event.path.startsWith(prefix)) {
     event.path = event.path.slice(prefix.length) || '/';
   }
